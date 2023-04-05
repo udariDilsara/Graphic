@@ -207,7 +207,7 @@ void draw_cylinder(GLfloat radius, GLfloat height)
     }
     glVertex3f(radius, 0.0, height);
     glEnd();
-
+    /** Draw the circle on bottom of cylinder */
     glBegin(GL_POLYGON);
     angle = 0.0;
     while (angle < 2 * PI) {
@@ -249,7 +249,6 @@ void table() {
 
     glPushMatrix();
     glTranslatef(0.0, 8.0, 0.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(10, 0.3, 3);
     glPopMatrix();
 
@@ -271,8 +270,6 @@ void tables() {
     glPopMatrix();
     }
     glPopMatrix();
-
-    
 
 }
 
@@ -303,7 +300,6 @@ void chair() {
 
     glPushMatrix();
     glTranslatef(0.0, 4.0, 0.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(2.5, 0.2, 1.6);
     glPopMatrix();
 
@@ -312,8 +308,6 @@ void chair() {
     glRotatef(90.0, 1.0, 0.0, 0.0);
     wall(2.5, 0.2, 1.6);
     glPopMatrix();
-
-
 }
 
 void chairs() {
@@ -349,15 +343,11 @@ void chairs() {
 void coupbord() {
 
     glPushMatrix();
-    //glTranslatef(-20, 0, -10 );
-    //glRotatef(90.0,0.0, 0.0, 1.0);
     wall(5,0.2,5);
     glPopMatrix();
 
     glPushMatrix();
-
     glTranslatef(0, 10.0, 0 );
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(5, 0.2, 5);
     glPopMatrix();
 
@@ -383,11 +373,10 @@ void coupbord() {
     glTranslatef(-4.9, 4.9, 0);
     glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(4.9, 0.2, 4.9);
-
     glPopMatrix();
-
-
 }
+
+
 void coupbord_handle() {
     const GLfloat yellow2[4] = { 1.0f, 1.0f, 0.5f, 1.0f };
     const GLfloat matwhite[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -398,11 +387,11 @@ void coupbord_handle() {
     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
 
 
-    glPushMatrix();
-    glTranslatef(-5.1, 5.0, 4.0);
-    glRotatef(90.0, 0.0, 0.0, 1.0);
-    wall(2, 0.1, 0.2);
-    glPopMatrix();
+        glPushMatrix();
+        glTranslatef(-5.1, 5.0, 4.0);
+        glRotatef(90.0, 0.0, 0.0, 1.0);
+        wall(2, 0.1, 0.2);
+        glPopMatrix();
     glPopMatrix();
 
 }
@@ -410,7 +399,6 @@ void coupbord_handle() {
 void fan_blades() {
     glPushMatrix();
     glTranslatef(4.0, 0.0, 0.0);
-    //glRotatef(animYRot, 0.0, 1.0, 0.0);
     wall(4, 0.2, 1);
     glPopMatrix();
 
@@ -446,13 +434,10 @@ void fan() {
 
 void door() {
     glPushMatrix();
-    //glTranslatef(xdoor, 0.5, ydoor);
-    //glTranslatef(0.0, 0.5, 1.0);
     glRotatef(openY, 0.0, 1.0, 0.0);
     glTranslatef(8.0, 12, 0);
     glRotatef(90.0, 1.0, 0.0, 0.0);
     wall(8, 1, 12);
-
     glPopMatrix();
 }
 
@@ -506,18 +491,15 @@ void cuirtain_strip() {
 void curtain() {
     glPushMatrix();
     glTranslatef(0, 0.5, 0.0);
-    //glRotatef(90.0, 0.0, 1.0, 0.0);
     draw_cylinder(0.2, 30);
     glPopMatrix();
 
     glPushMatrix();
-    //glTranslatef(0, 19.6, 0.0);
 
     GLfloat j = 0.0;
     for (j; j <= 30; j += 2.3) {
 
         glPushMatrix();
-        //glRotatef(curtainY, 0.0, 1.0, 0.0);
         glTranslatef(0, 0.0, j);
         draw_tube(0.3, 0.2);
         cuirtain_strip();
@@ -531,33 +513,27 @@ void window() {
     //vertical bars
     glPushMatrix();
     glTranslatef(0, 0, 15.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(10, 1.5, 0.5);
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(0, 0, -15.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(10, 1.5, 0.5);
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(-2.5, 0, -5.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(7, 1.5, 0.5);
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(-2.5, 0, 5.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
     wall(7, 1.5, 0.5);
     glPopMatrix();
 
 
     glPushMatrix();
     glTranslatef(-2.5, 0, 10.0);
-    //glRotatef(90.0, 0.0, 0.0, 1.0);
-    //wall(7, 1.0, 5); //glass
     glPopMatrix();
 
     //Horizontal bar
@@ -583,13 +559,11 @@ void window() {
 
     glPushMatrix();
     glTranslatef(0.0, 0, 17.5);
-    //glRotatef(90.0, 0.0, 1.0, 0.0);
     wall(15, 1, 2.50);
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(0.0, 0, -17.5);
-    //glRotatef(90.0, 0.0, 1.0, 0.0);
     wall(15, 1, 2.50);
     glPopMatrix();
 
@@ -605,8 +579,6 @@ void window() {
     wall(15, 1, 2.50);
     glPopMatrix();
 
-    //curtains
-
 
 }
 
@@ -618,20 +590,14 @@ void floor() {
     for (int i = -35; i <=40;i+=20) {
 
         for (int j = -25; j <= 30;j+=20) {
-            //for (int k = 0; k <= 30;k+=10) {
                 glPushMatrix();
                 glTranslatef(j, 1, i);
-
-                //const GLfloat grey[4] = { 0.5f, 0.5f, 0.5f, 1.0f };
                 glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, grey);
                 glMaterialfv(GL_FRONT, GL_AMBIENT, grey);
                 glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
                 glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-                //glRotatef(90.0, 0.0, 1.0, 0.0);
                 wall(5, 1, 5);
                 glPopMatrix();
-            //}
-
         }
 
     }
@@ -641,20 +607,15 @@ void floor() {
     for (int i = -25; i <= 40; i += 20) {
 
         for (int j = -25; j <= 30; j += 20) {
-            //for (int k = 0; k <= 30;k+=10) {
             glPushMatrix();
-            glTranslatef(j, 1, i);
 
-         
+            glTranslatef(j, 1, i);        
             glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, grey3);
             glMaterialfv(GL_FRONT, GL_AMBIENT, grey3);
             glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
             glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-            //glRotatef(90.0, 0.0, 1.0, 0.0);
             wall(5, 1, 5);
             glPopMatrix();
-            //}
-
         }
 
     }
@@ -666,20 +627,15 @@ void floor() {
     for (int i = -25; i <= 40; i += 20) {
 
         for (int j = -15; j <= 30; j += 20) {
-            //for (int k = 0; k <= 30;k+=10) {
-            glPushMatrix();
-            glTranslatef(j, 1, i);
 
-            
+            glPushMatrix();
+            glTranslatef(j, 1, i);            
             glMaterialfv(GL_FRONT, GL_DIFFUSE, grey);
             glMaterialfv(GL_FRONT, GL_AMBIENT, grey);
             glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
             glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-            //glRotatef(90.0, 0.0, 1.0, 0.0);
             wall(5, 1, 5);
             glPopMatrix();
-            //}
-
         }
 
     }
@@ -689,26 +645,18 @@ void floor() {
     for (int i = -35; i <= 40; i += 20) {
 
         for (int j = -15; j <= 30; j += 20) {
-            //for (int k = 0; k <= 30;k+=10) {
             glPushMatrix();
             glTranslatef(j, 1, i);
-
-            //const GLfloat black[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
             glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, grey3);
             glMaterialfv(GL_FRONT, GL_AMBIENT, grey3);
             glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
             glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-            //glRotatef(90.0, 0.0, 1.0, 0.0);
+
             wall(5, 1, 5);
             glPopMatrix();
-            //}
-
         }
-
     }
     glPopMatrix();
-
-
 
 }
 
@@ -744,19 +692,14 @@ void cilin() {
     for (int i = -35; i <= 40; i += 20) {
 
         for (int j = -25; j <= 30; j += 20) {
-            //for (int k = 0; k <= 30;k+=10) {
             glPushMatrix();
             glTranslatef(j, 0, i);
-
-
-            glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, grey);
+               glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, grey);
             glMaterialfv(GL_FRONT, GL_AMBIENT, grey);
             glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
             glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-            //glRotatef(90.0, 0.0, 1.0, 0.0);
             wall(5, 0.5, 5);
             glPopMatrix();
-            //}
 
         }
 
@@ -799,7 +742,6 @@ void cilin() {
         glPushMatrix();
         glTranslatef(0, -1, i);
 
-        //const GLfloat white[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
         glMaterialfv(GL_FRONT, GL_DIFFUSE, matwhite);
         glMaterialfv(GL_FRONT, GL_AMBIENT, matwhite);
         glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
@@ -905,11 +847,6 @@ void classroom() {
         wall(15, 1, 40);//right wall
         glPopMatrix();
 
-        glPushMatrix();
-        glTranslatef(-30, 15, 0);
-        glRotatef(-90.0, 0.0, 0.0, 1.0);
-        // wall(15,1,40);//left wall
-        glPopMatrix();
 
         glPushMatrix();
         glTranslatef(0.0, 15, -40);
@@ -1048,7 +985,6 @@ void classroom() {
     glPopMatrix();
 
     glPushMatrix();
-    //const GLfloat black[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
     glMaterialfv(GL_FRONT, GL_DIFFUSE, black);
     glMaterialfv(GL_FRONT, GL_AMBIENT, black);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
@@ -1060,7 +996,6 @@ void classroom() {
 
 
     glPushMatrix();
-    //const GLfloat yellow1[4] = { 0.7f, 0.7f, 0.6f, 1.0f };
     glMaterialfv(GL_FRONT, GL_DIFFUSE, yellow1);
     glMaterialfv(GL_FRONT, GL_AMBIENT, yellow1);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
@@ -1068,8 +1003,7 @@ void classroom() {
     base();
 
     glPushMatrix();
-        //glRotatef(open, 0.0, 1.0, 0.0);
-    
+   
         glMaterialfv(GL_FRONT, GL_DIFFUSE, brown);
         glMaterialfv(GL_FRONT, GL_AMBIENT, brown);
         glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
@@ -1104,10 +1038,8 @@ void classroom() {
 
     glPopMatrix();
 
-
+    //door
     glPushMatrix();
-    //glRotatef(open, 0.0, 1.0, 0.0);
-
     glMaterialfv(GL_FRONT, GL_DIFFUSE, brown2);
     glMaterialfv(GL_FRONT, GL_AMBIENT, brown2);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
@@ -1134,14 +1066,10 @@ void classroom() {
     glPopMatrix();
 
     glPushMatrix();
-    //const GLfloat grey[4] = { 0.5f, 0.5f, 0.5f, 1.0f };
     glMaterialfv(GL_FRONT, GL_DIFFUSE, grey);
     glMaterialfv(GL_FRONT, GL_AMBIENT, grey);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matwhite);
     glMaterialf(GL_FRONT, GL_SHININESS, 128.0f);
-
-
-
 
     glPushMatrix();
     glTranslatef(0, 23, -20);
@@ -1157,10 +1085,6 @@ void classroom() {
     glTranslatef(0, 23, 20);
     fan();
     glPopMatrix();
-
-
-    
-
     glPopMatrix();
 
 
